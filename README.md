@@ -26,6 +26,7 @@
 - [Les bénédictions](#les-bénédictions)
 - [Le camp](#le-camp)
 - [Le bestiaire](#le-bestiaire)
+- [Installer le jeu sur ton téléphone](#installer-le-jeu-sur-ton-téléphone)
 - [Commandes](#commandes)
 - [Conseils pour bien débuter](#conseils-pour-bien-débuter)
 - [Questions fréquentes](#questions-fréquentes)
@@ -46,7 +47,7 @@ Dans le royaume de **Kyridril**, la corruption s'est réveillée. Elle a d'abord
 | **Genre** | Hack-and-slash / action en arènes, avec progression entre les expéditions |
 | **Campagne** | 5 chapitres, 50 arènes nommées, 5 boss |
 | **Durée d'une partie** | Quelques minutes par expédition : idéal sur téléphone |
-| **Plateformes** | Navigateur, sur téléphone, tablette et ordinateur. Applis iOS et Android à venir |
+| **Plateformes** | Navigateur, sur téléphone, tablette et ordinateur, installable sur l'écran d'accueil. Applis iOS et Android à venir |
 | **Commandes** | Écran tactile (joystick + boutons) ou clavier |
 | **Prix** | Gratuit |
 | **Langue** | Français |
@@ -152,6 +153,26 @@ Une soixantaine d'ennemis peuplent la Marche, chacun avec ses attaques : gobelin
 - **Les élites** portent un trait : **Enragé** (plus vif), **Blindé** (encaisse jusqu'à son premier déséquilibre) ou **Explosif** (sors vite du cercle à sa mort).
 - **Les gardiens**, comme le Troll ancestral, le Golem colosse ou l'Ogre chef de guerre, défendent certaines arènes.
 
+## Installer le jeu sur ton téléphone
+
+Le jeu s'installe sur l'écran d'accueil comme une appli. Il se lance alors en plein écran, en paysage, et **se joue hors connexion**.
+
+**Sur Android (Chrome, Edge, Samsung Internet)**
+1. Ouvre le jeu : https://floflow87.github.io/Kyridril-Erynd-Var/
+2. Au camp, ouvre les **Réglages** (la roue dentée), puis touche **Installer le jeu**.
+3. Confirme : l'icône **Erynd Var** apparaît sur ton écran d'accueil.
+
+**Sur iPhone et iPad (Safari)**
+1. Ouvre le jeu dans **Safari**.
+2. Touche le bouton **Partager** (le carré avec une flèche vers le haut).
+3. Choisis **Sur l'écran d'accueil**, puis **Ajouter**.
+
+**Sur ordinateur (Chrome, Edge)** : clique sur l'icône d'installation à droite de la barre d'adresse.
+
+> **Bon à savoir.** Après la première visite, tout le jeu est gardé sur l'appareil : les 50 arènes se jouent sans réseau. Quand une nouvelle version sort, un message discret apparaît au camp pour la mettre à jour, jamais en plein combat.
+>
+> **Sur iPhone**, le jeu installé a sa propre sauvegarde, séparée de celle de Safari : une partie commencée dans Safari ne se retrouve pas dans l'appli installée.
+
 ## Commandes
 
 | Action | Téléphone / tablette | Clavier |
@@ -196,7 +217,7 @@ Oui, automatiquement, dans ton navigateur et sur l'appareil où tu joues. Vider 
 Sur tout navigateur récent (Safari, Chrome, Firefox, Edge), sur téléphone, tablette ou ordinateur. Le jeu se joue en **paysage**. Sur téléphone, il reste dans ce sens même si l'appareil pivote.
 
 **Faut-il une connexion ?**
-Pour l'instant, oui, pour charger le jeu. La version installable, à venir, fonctionnera hors connexion.
+Seulement la première fois. Ensuite, le jeu est gardé sur l'appareil et se joue hors connexion, surtout une fois installé sur l'écran d'accueil.
 
 **Le jeu rame sur mon téléphone, que faire ?**
 Ferme les autres onglets et applications, et vérifie que le mode économie d'énergie est désactivé. Dans les réglages, tu peux aussi couper les secousses de l'écran.
@@ -207,7 +228,7 @@ Ferme les autres onglets et applications, et vérifie que le mode économie d'é
 - [x] Le camp, l'atelier, le Sanctuaire, l'énergie
 - [x] Le bouclier et ses 5 paliers, la parade parfaite et le renvoi des tirs
 - [x] La version jouable en ligne
-- [ ] La version installable sur l'écran d'accueil, jouable hors connexion
+- [x] La version installable sur l'écran d'accueil, jouable hors connexion
 - [ ] Les applications iOS (App Store) et Android (Google Play)
 - [ ] Une sauvegarde plus robuste
 - [ ] De nouveaux défis et de nouvelles marches
