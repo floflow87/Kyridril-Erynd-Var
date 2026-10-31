@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/marche/splash-logo.webp" alt="Kyridril - Erynd Var" width="560">
+  <img src="brand/logo.webp" alt="Kyridril - Erynd Var" width="620">
 </p>
 
 <h3 align="center">Un hack-and-slash de fantasy sombre, à jouer gratuitement dans le navigateur</h3>
