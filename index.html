@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover exposes safe-area insets (notches) via CSS env() — see ADR-007 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0b0d12" />
+    <!-- Empty icon: prevents the browser's default /favicon.ico request (a placeholder icon comes later). -->
+    <link rel="icon" href="data:," />
+    <title>Kyridril - Erynd Var</title>
+    <style>
+      :root {
+        /* Safe-area insets, readable from JS via getComputedStyle (see core/safe-area.ts) */
+        --sai-top: env(safe-area-inset-top, 0px);
+        --sai-right: env(safe-area-inset-right, 0px);
+        --sai-bottom: env(safe-area-inset-bottom, 0px);
+        --sai-left: env(safe-area-inset-left, 0px);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #0b0d12;
+        /* Disable browser touch gestures that interfere with game input */
+        touch-action: none;
+        overscroll-behavior: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+      }
+
+      #game-root {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Pixel-art (legacy Valemont / sandbox): never smooth the upscaled canvas */
+      #game-root canvas {
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
+
+      /* La Marche d'Erynd: smooth cartoon art, scaled with filtering */
+      html[data-mode='marche'] #game-root canvas,
+      html[data-mode='gallery'] #game-root canvas,
+      html[data-mode='ui'] #game-root canvas {
+        image-rendering: auto;
+      }
+
+      html[data-mode='marche'] body,
+      html[data-mode='ui'] body {
+        background: #120e14;
+        -webkit-touch-callout: none;
+      }
+
+      html[data-mode='marche'] #game-root,
+      html[data-mode='ui'] #game-root {
+        height: 100dvh;
+      }
+
+      /*
+       * La Marche d'Erynd: one frame holds the canvas and the whole DOM UI. On a portrait
+       * touch screen it is laid out landscape (viewport height × width) and turned a
+       * quarter clockwise to fill the screen — no portrait guard (src/marche/ui/screen-turn.ts,
+       * TURN_QUERY is the same media query). A size container: the UI's container units
+       * and queries follow the frame, not the screen.
+       */
+      html[data-mode='marche'] #marche-frame,
+      html[data-mode='gallery'] #marche-frame,
+      html[data-mode='ui'] #marche-frame {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        container: marche-frame / size;
+      }
+
+      @media (orientation: portrait) and (pointer: coarse) {
+        html[data-mode='marche'] #marche-frame,
+        html[data-mode='gallery'] #marche-frame,
+        html[data-mode='ui'] #marche-frame {
+          width: 100vh;
+          width: 100dvh;
+          height: 100vw;
+          transform-origin: 0 0;
+          transform: translateX(100vw) rotate(90deg);
+        }
+
+        html[data-mode='marche'] #game-root,
+        html[data-mode='gallery'] #game-root,
+        html[data-mode='ui'] #game-root {
+          height: auto;
+        }
+      }
+
+      /*
+       * Orientation lock (screen-turn.ts, a setting, on by default): the script turns the frame
+       * against the screen's own rotation (data-turn, clockwise degrees) so a tilted phone never
+       * flips the game. Set only on touch screens in the modes above; it wins over the query.
+       */
+      html[data-turn='0'] #marche-frame,
+      html[data-turn='180'] #marche-frame {
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        transform: none;
+      }
+
+      html[data-turn='180'] #marche-frame {
+        transform-origin: 50% 50%;
+        transform: rotate(180deg);
+      }
+
+      html[data-turn='90'] #marche-frame,
+      html[data-turn='270'] #marche-frame {
+        width: 100vh;
+        width: 100dvh;
+        height: 100vw;
+        transform-origin: 0 0;
+        transform: translateX(100vw) rotate(90deg);
+      }
+
+      html[data-turn='270'] #marche-frame {
+        transform: translateY(100vh) rotate(-90deg);
+        transform: translateY(100dvh) rotate(-90deg);
+      }
+
+      html[data-turn='0'] #game-root {
+        height: 100vh;
+        height: 100dvh;
+      }
+
+      html[data-turn='90'] #game-root,
+      html[data-turn='180'] #game-root,
+      html[data-turn='270'] #game-root {
+        height: auto;
+      }
+
+      /* Portrait guard: the legacy games are landscape-only (ADR-007). */
+      #orientation-guard {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        background: #0b0d12;
+        color: #e8eaf0;
+        font-family: system-ui, sans-serif;
+        z-index: 1000;
+      }
+
+      @media (orientation: portrait) {
+        #orientation-guard {
+          display: flex;
+        }
+      }
+
+      /* La Marche turns instead (phones, tablets); narrow desktop windows play unturned. */
+      html[data-mode='marche'] #orientation-guard,
+      html[data-mode='gallery'] #orientation-guard,
+      html[data-mode='ui'] #orientation-guard {
+        display: none;
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-BSovtxDo.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/phaser-0YPJO2g1.js">
+  </head>
+  <body>
+    <div id="marche-frame"><div id="game-root"></div></div>
+    <!-- Text is set from i18n at runtime (ADR-004: no hard-coded UI strings). -->
+    <div id="orientation-guard" data-i18n="app:rotateDevice"></div>
+  </body>
+</html>
