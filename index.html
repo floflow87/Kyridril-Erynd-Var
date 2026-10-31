@@ -7,11 +7,22 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
-    <meta name="theme-color" content="#0b0d12" />
+    <!-- The splash cover's backdrop (src/marche/ui/splash-boot.ts): no flash at launch. -->
+    <meta name="theme-color" content="#120e14" />
     <!-- The Kyridril icon (brand/kyridril-icon.png), served from public/ — relative: the site lives under a sub-path. -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <!--
+      The installable version (docs/marche/architecture.md §13 « Version installable (PWA) »): the
+      manifest (relative: id, start_url and scope are the folder), iOS's home-screen app full
+      screen under a translucent status bar (the safe-area insets keep the UI clear of it).
+    -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Erynd Var" />
     <title>Kyridril - Erynd Var</title>
     <style>
       :root {
@@ -183,7 +194,7 @@
         display: none;
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-yjG8IKG5.js"></script>
+    <script type="module" crossorigin src="./assets/index-B4digew7.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/phaser-0YPJO2g1.js">
   </head>
   <body>
