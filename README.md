@@ -243,5 +243,7 @@ Ferme les autres onglets et applications, et vérifie que le mode économie d'é
   © 2026 floflow87. Tous droits réservés.<br>
   Ce dépôt contient uniquement la version compilée du jeu, publiée avec GitHub Pages.<br>
   Le code, les illustrations, le logo, les personnages et l'univers sont la propriété de leur auteur<br>
-  et ne peuvent pas être réutilisés sans autorisation.
+  et ne peuvent pas être réutilisés sans autorisation.<br>
+  <a href="https://floflow87.github.io/Kyridril-Erynd-Var/confidentialite.html">Politique de confidentialité</a>
+  &nbsp;·&nbsp; <a href="https://floflow87.github.io/Kyridril-Erynd-Var/support.html">Assistance</a>
 </p>
