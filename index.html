@@ -75,6 +75,15 @@
         image-rendering: auto;
       }
 
+      /*
+       * Before the script picks the mode: black, as the launch screens around it (the native
+       * apps', the installed app's) and the studio screen that follows (src/marche/ui/studio.ts).
+       */
+      html:not([data-mode]),
+      html:not([data-mode]) body {
+        background: #000;
+      }
+
       html[data-mode='marche'] body,
       html[data-mode='ui'] body {
         background: #120e14;
@@ -194,7 +203,7 @@
         display: none;
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-nBUHdTyF.js"></script>
+    <script type="module" crossorigin src="./assets/index-NpJFjyZn.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/phaser-0YPJO2g1.js">
   </head>
   <body>
