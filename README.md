@@ -171,7 +171,7 @@ Le jeu s'installe sur l'écran d'accueil comme une appli. Il se lance alors en p
 
 > **Bon à savoir.** Après la première visite, tout le jeu est gardé sur l'appareil : les 50 arènes se jouent sans réseau. Quand une nouvelle version sort, un message discret apparaît au camp pour la mettre à jour, jamais en plein combat.
 >
-> **Sur iPhone**, le jeu installé a sa propre sauvegarde, séparée de celle de Safari : une partie commencée dans Safari ne se retrouve pas dans l'appli installée.
+> **Sur iPhone**, le jeu installé a sa propre sauvegarde, séparée de celle de Safari. Pour y retrouver ta partie, exporte-la depuis Safari (Réglages → Sauvegarde → Exporter) et importe-la dans le jeu installé.
 
 ## Commandes
 
@@ -211,7 +211,10 @@ Dans les réglages, tu peux régler le son et le volume, les vibrations, les sec
 Oui, entièrement.
 
 **Ma progression est-elle sauvegardée ?**
-Oui, automatiquement, dans ton navigateur et sur l'appareil où tu joues. Vider les données du site ou jouer en navigation privée l'efface. Une sauvegarde plus robuste arrive avec l'application.
+Oui, automatiquement, sur l'appareil où tu joues. Le jeu garde aussi **3 copies de secours** : si une sauvegarde est abîmée, la dernière copie valide est restaurée toute seule.
+
+**Comment transférer ma partie sur un autre appareil (ou de Safari vers le jeu installé) ?**
+Au camp, ouvre **Réglages → Sauvegarde → Exporter** : le jeu affiche un code `KEV1-…` (à copier, partager ou télécharger) et un **QR code**. Sur l'autre appareil, ouvre **Réglages → Sauvegarde → Importer** et colle le code, ou scanne simplement le QR code avec l'appareil photo. Ta progression actuelle est gardée en copie de secours avant le remplacement.
 
 **Sur quels appareils puis-je jouer ?**
 Sur tout navigateur récent (Safari, Chrome, Firefox, Edge), sur téléphone, tablette ou ordinateur. Le jeu se joue en **paysage**. Sur téléphone, il reste dans ce sens même si l'appareil pivote.
@@ -230,7 +233,7 @@ Ferme les autres onglets et applications, et vérifie que le mode économie d'é
 - [x] La version jouable en ligne
 - [x] La version installable sur l'écran d'accueil, jouable hors connexion
 - [ ] Les applications iOS (App Store) et Android (Google Play)
-- [ ] Une sauvegarde plus robuste
+- [x] Une sauvegarde robuste, avec copies de secours et code de transfert entre appareils
 - [ ] De nouveaux défis et de nouvelles marches
 
 ---
