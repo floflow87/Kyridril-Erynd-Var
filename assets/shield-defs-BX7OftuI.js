@@ -1,2 +1,0 @@
-import{d6 as t,eB as c}from"./index-BO224ITN.js";const r=150,S=140,E={windowMs:800,windupMult:.5,blockMult:1.5,parryMult:1.75},o=["#b07a45","#8f9aa6","#c9d3dd","#5ec4c8","#f2c14e"],e=[0,8,12,16,20],l={bossShare:.25,speedMult:1.25},R=Object.fromEntries(t.map((a,s)=>[a,{id:a,arena:c(a),reduction:(6+s)/10,stamina:60+15*s,arcDeg:70+5*s,color:o[s],reflectPct:e[s]}]));export{r as P,E as R,R as S,S as T,l as a};
-
