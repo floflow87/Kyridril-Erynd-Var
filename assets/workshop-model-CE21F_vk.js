@@ -1,0 +1,2 @@
+function o(e,t){if(!(t>0)||!Number.isFinite(e))return 1;const n=e/t;return n>=.8?3:n>=.4?2:1}function l(e,t){const a=e.cost===null||e.level>=e.maxLevel?null:e.cost,r=a!==null&&e.affordable&&t>=a;return{id:e.id,level:e.level,maxLevel:e.maxLevel,cost:a,missing:a===null||r?0:Math.max(1,a-t),state:a===null?"max":r?"affordable":"short",tier:o(e.level,e.maxLevel)}}function s(e){return e.upgrades.map(t=>l(t,e.gold))}function f(e){return e==="affordable"}function i(e){return s(e).filter(t=>t.state==="affordable").length}export{i as a,o as b,f,s as w};
+

@@ -1,2 +1,0 @@
-const a={rise:"camp:erynd:rise",stand:"camp:erynd:stand",walk0:"camp:erynd:walk:0",walk1:"camp:erynd:walk:1",walk2:"camp:erynd:walk:2",walk3:"camp:erynd:walk:3"};function e(){return Object.values(a)}const s={w:150,h:290,ox:75,oy:282},n={x:30,y:6},c={frameMs:125,speed:150,exit:{x:40,y:586}},y={speed:330,path:[{x:330,y:628},{x:1360,y:652}],back:{x:1e3,y:644}};export{n as C,c as a,y as b,e as c,a as d,s as e};
-
