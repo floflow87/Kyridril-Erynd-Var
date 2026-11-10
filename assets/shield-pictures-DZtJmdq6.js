@@ -1,0 +1,2 @@
+const c=[96,192,384],i=(s,e)=>`assets/marche/boucliers/${s}-${e}.webp`;function l(s){const e=globalThis.__EMBEDDED_ASSETS__;return!e||s in e}function r(s,e=!1){const[t,n]=c;return e||!l(i(s,n))?t:n}function _(s,e=!1){const t=i(s,r(s,e));return globalThis.__EMBEDDED_ASSETS__?.[t]??t}function a(s){return c.map(e=>[e,i(s,e)]).filter(([,e])=>l(e)).map(([e,t])=>`${globalThis.__EMBEDDED_ASSETS__?.[t]??t} ${e}w`).join(", ")}export{_ as a,i as b,r as c,a as s};
+
