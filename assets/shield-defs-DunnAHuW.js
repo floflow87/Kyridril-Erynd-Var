@@ -1,0 +1,2 @@
+import{dg as t,eP as c}from"./index-DXPyo6If.js";const r=150,S=200,E={windowMs:800,windupMult:.5,blockMult:1.5,parryMult:1.75},o=["#b07a45","#8f9aa6","#c9d3dd","#5ec4c8","#f2c14e","#d9a93a"],e=[0,8,12,16,20,25],d={bossShare:.25,speedMult:1.25},l=Object.fromEntries(t.map((s,a)=>[s,{id:s,arena:c(s),reduction:Math.min(1,(6+a)/10),stamina:60+15*a,arcDeg:70+5*a,color:o[a],reflectPct:e[a]}]));export{r as P,E as R,l as S,S as T,d as a};
+
