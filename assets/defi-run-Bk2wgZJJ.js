@@ -1,0 +1,2 @@
+import{f8 as o,c2 as t,aW as i}from"./index-DW8BDpaz.js";import{D as l,i as c}from"./css-CUqo4vqv.js";const f=(a,e)=>o(a,l.energy,e);function u(a,e,r){if(!c(a,e.arena,e.mode)||f(a,r)>0)return null;const n=t(e.seed,a),s=i.arenas.length-1;return n.arenaIndex=Math.max(0,Math.min(s,e.arena-1)),n.startArena=n.arenaIndex+1,n.boonCounter=0,n.heroicLevel=e.mode,n.origin="camp",n.endless={arena:e.arena,mode:e.mode,seed:e.seed>>>0},e.challenge&&(n.endless.challenge={...e.challenge}),n}export{f as a,u as d};
+
