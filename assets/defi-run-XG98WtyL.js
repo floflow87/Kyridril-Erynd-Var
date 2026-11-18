@@ -1,0 +1,2 @@
+import{c2 as s,aW as r}from"./index-Bb8Gg0jt.js";import{w as i}from"./battle-CmguQrDu.js";const o=(n,e)=>e?.kit?i(n,e.kit):n;function m(n,e){const a=s(e.seed,o(n,e)),t=r.arenas.length-1;return a.arenaIndex=Math.max(0,Math.min(t,e.arena-1)),a.startArena=a.arenaIndex+1,a.boonCounter=0,a.heroicLevel=e.mode,a.origin="camp",a.endless={arena:e.arena,mode:e.mode,seed:e.seed>>>0},e.challenge&&(a.endless.challenge={...e.challenge}),e.kit&&(a.endless.kit={...e.kit}),a}export{o as b,m as d};
+
