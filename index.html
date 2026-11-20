@@ -84,6 +84,81 @@
         background: #000;
       }
 
+      /*
+       * The studio screen's arrival (src/marche/ui/studio.ts adds `mst-go` to its layer; never
+       * under reduced motion) — here, not in the boot chunk, whose byte budget has no room for
+       * it: the logo falls from 4× and blurred onto its place (ease-in), lands squashed at
+       * 0.28 s, rebounds and settles; from that impact the screen shakes and a burst of light
+       * rays flares behind the logo (a white flash at its heart), spinning out.
+       */
+      .mst-go {
+        animation: mst-sh 0.4s 0.28s;
+      }
+
+      .mst-go img {
+        animation: mst-in 0.9s both;
+      }
+
+      .mst-go::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 95cqh;
+        aspect-ratio: 1;
+        background:
+          radial-gradient(closest-side, #fffd, #fff6 18%, #fff0 42%),
+          repeating-conic-gradient(#fff7 0 5deg, #0000 0 18deg);
+        -webkit-mask: radial-gradient(closest-side, #000 15%, #0000);
+        mask: radial-gradient(closest-side, #000 15%, #0000);
+        opacity: 0;
+        animation: mst-fl 1.3s 0.28s ease-out;
+      }
+
+      @keyframes mst-in {
+        0% {
+          transform: scale(4);
+          filter: blur(12px);
+          animation-timing-function: ease-in;
+        }
+        31% {
+          transform: scale(1.25, 0.78);
+          filter: drop-shadow(0 0 10px #fff);
+        }
+        50% {
+          transform: scale(0.9, 1.1);
+          filter: none;
+        }
+        68% {
+          transform: scale(1.04, 0.97);
+        }
+        84% {
+          transform: scale(0.99, 1.01);
+        }
+      }
+
+      @keyframes mst-sh {
+        25% {
+          translate: -7px 5px;
+        }
+        50% {
+          translate: 6px -4px;
+        }
+        75% {
+          translate: -3px 2px;
+        }
+      }
+
+      @keyframes mst-fl {
+        0% {
+          opacity: 1;
+          scale: 0.45;
+        }
+        to {
+          scale: 1.7;
+          rotate: 25deg;
+        }
+      }
+
       html[data-mode='marche'] body,
       html[data-mode='ui'] body {
         background: #120e14;
@@ -203,7 +278,7 @@
         display: none;
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-BWB-QYd2.js"></script>
+    <script type="module" crossorigin src="./assets/index-CevjNfJl.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/phaser-DIUF0PZB.js">
   </head>
   <body>
