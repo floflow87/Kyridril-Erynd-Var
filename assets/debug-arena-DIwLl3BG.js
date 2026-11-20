@@ -1,2 +1,0 @@
-import{dR as i,b0 as a,dD as d,b5 as c}from"./index-D2MHrhAd.js";import"./phaser-DIUF0PZB.js";function u(r){return Math.max(1,Math.min(5,i.indexOf(r)+1))}function b(r,e){const n=e.bossId,o=n===void 0?void 0:a.arenas.find(s=>s.bossId===n),t=n===void 0?{...r}:o?{...o}:{number:r.number,chapter:u(n),position:10,biome:d[n],waves:[],layouts:["throne"],bossId:n,clearGold:0};return e.chapter!==void 0&&(t.chapter=e.chapter),t}function h(r,e){return b(c(r,a),e)}export{u as chapterOfBoss,b as debugArenaDef,h as debugArenaFor};
-
