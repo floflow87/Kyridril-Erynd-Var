@@ -34,6 +34,8 @@
         /* The screen the game's frame fills (#marche-frame below): the viewport in a tab. */
         --scr-w: 100vw;
         --scr-h: 100dvh;
+        /* The buttons' face (its @font-face below; src/marche/ui/css.ts .marche-button). */
+        --font-btn: 'Erynd Bouton', Georgia, serif;
       }
 
       /*
@@ -292,8 +294,21 @@
       html[data-mode='ui'] #orientation-guard {
         display: none;
       }
+
+      /*
+       * The buttons' face (--font-btn): Lilita One (SIL OFL 1.1, assets/fonts/OFL.txt), subset to
+       * Latin + French and renamed, as the OFL asks of a modified copy; fetched once a button
+       * shows, embedded in the single-file preview (scripts/build-preview.mjs). 100 900: its one
+       * heavy weight serves the buttons' 700, never a faux bold.
+       */
+      @font-face {
+        font-family: 'Erynd Bouton';
+        src: url('assets/fonts/erynd-bouton.woff2') format('woff2');
+        font-weight: 100 900;
+        font-display: swap;
+      }
     </style>
-    <script type="module" crossorigin src="./assets/index-9ipRu4a6.js"></script>
+    <script type="module" crossorigin src="./assets/index-Dj278gYR.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/phaser-DIUF0PZB.js">
   </head>
   <body>
