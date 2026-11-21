@@ -31,6 +31,26 @@
         --sai-right: env(safe-area-inset-right, 0px);
         --sai-bottom: env(safe-area-inset-bottom, 0px);
         --sai-left: env(safe-area-inset-left, 0px);
+        /* The screen the game's frame fills (#marche-frame below): the viewport in a tab. */
+        --scr-w: 100vw;
+        --scr-h: 100dvh;
+      }
+
+      /*
+       * The installed app (home screen): the frame fills the page itself (the body, a size
+       * container), never the viewport units — iOS's home-screen app keeps them stale after
+       * the OS turns it (launched upright, then turned: a band of the old size left dark on
+       * one edge). No toolbar there, so the page is the whole screen.
+       */
+      @media (display-mode: standalone), (display-mode: fullscreen) {
+        :root {
+          --scr-w: 100cqw;
+          --scr-h: 100cqh;
+        }
+
+        html[data-mode] body {
+          container-type: size;
+        }
       }
 
       * {
@@ -168,7 +188,7 @@
 
       html[data-mode='marche'] #game-root,
       html[data-mode='ui'] #game-root {
-        height: 100dvh;
+        height: var(--scr-h);
       }
 
       /*
@@ -184,9 +204,8 @@
         position: fixed;
         left: 0;
         top: 0;
-        width: 100%;
-        height: 100vh;
-        height: 100dvh;
+        width: var(--scr-w);
+        height: var(--scr-h);
         container: marche-frame / size;
       }
 
@@ -194,11 +213,10 @@
         html[data-mode='marche'] #marche-frame,
         html[data-mode='gallery'] #marche-frame,
         html[data-mode='ui'] #marche-frame {
-          width: 100vh;
-          width: 100dvh;
-          height: 100vw;
+          width: var(--scr-h);
+          height: var(--scr-w);
           transform-origin: 0 0;
-          transform: translateX(100vw) rotate(90deg);
+          transform: translateX(var(--scr-w)) rotate(90deg);
         }
 
         html[data-mode='marche'] #game-root,
@@ -215,9 +233,8 @@
        */
       html[data-turn='0'] #marche-frame,
       html[data-turn='180'] #marche-frame {
-        width: 100%;
-        height: 100vh;
-        height: 100dvh;
+        width: var(--scr-w);
+        height: var(--scr-h);
         transform: none;
       }
 
@@ -228,21 +245,18 @@
 
       html[data-turn='90'] #marche-frame,
       html[data-turn='270'] #marche-frame {
-        width: 100vh;
-        width: 100dvh;
-        height: 100vw;
+        width: var(--scr-h);
+        height: var(--scr-w);
         transform-origin: 0 0;
-        transform: translateX(100vw) rotate(90deg);
+        transform: translateX(var(--scr-w)) rotate(90deg);
       }
 
       html[data-turn='270'] #marche-frame {
-        transform: translateY(100vh) rotate(-90deg);
-        transform: translateY(100dvh) rotate(-90deg);
+        transform: translateY(var(--scr-h)) rotate(-90deg);
       }
 
       html[data-turn='0'] #game-root {
-        height: 100vh;
-        height: 100dvh;
+        height: var(--scr-h);
       }
 
       html[data-turn='90'] #game-root,
@@ -279,7 +293,7 @@
         display: none;
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-BUoVh2Op.js"></script>
+    <script type="module" crossorigin src="./assets/index-CFZrbVr_.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/phaser-DIUF0PZB.js">
   </head>
   <body>
