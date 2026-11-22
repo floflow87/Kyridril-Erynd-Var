@@ -1,0 +1,2 @@
+const e=["wood","iron","steel","runic","sun","onyx"];function n(o,s=0){return s?`workshop:shield:${o}:o${s}`:`workshop:shield:${o}`}const c={w:96,h:110,ox:48,oy:8},r={fire:"workshop:forge:fire",coals:"workshop:forge:coals",rays:"workshop:forge:rays"},a={w:46,h:42,frames:8,px:2.6,k:4,frameMs:95},t={w:52,h:8},h=256,f=o=>`${r.fire}:${o%a.frames}`;function w(){return[...Array.from({length:a.frames},(o,s)=>f(s)),r.coals,r.rays,...e.flatMap(o=>[0,1,2,3].map(s=>n(o,s)))]}export{a as F,c as W,r as a,t as b,h as c,f as d,w as f,n as w};
+
