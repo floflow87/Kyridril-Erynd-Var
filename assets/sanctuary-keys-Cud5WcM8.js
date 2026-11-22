@@ -1,0 +1,2 @@
+const o={rays:"sanctuary:rays",burst:"sanctuary:burst",coin:"sanctuary:coin",gold:"sanctuary:gold"},s={rays:{w:256,h:256,ox:128,oy:128},burst:{w:256,h:256,ox:128,oy:128},coin:{w:26,h:26,ox:13,oy:13},gold:{w:220,h:62,ox:110,oy:40}};function a(){return Object.values(o)}const t={backdrop:0,sky:1,lights:2,haloBack:10,bowl:12,gold:13,haloFront:14,front:24,coins:30,burst:31};export{o as S,s as a,t as b,a as s};
+
