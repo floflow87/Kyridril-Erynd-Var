@@ -1,0 +1,2 @@
+const y=-1,e=1,i=Math.PI/180;function x(n,s,r,t,a,c){const o=Math.cos(a*i),u=Math.sin(a*i);c.x=r+(n-r)*o-(s-t)*u,c.y=t+(n-r)*u+(s-t)*o}function E(n,s,r,t){x(n.end.x,n.end.y,n.mid.x,n.mid.y,r,t);const a=t.x-n.root.x,c=t.y-n.root.y,o=s-Math.atan2(c,a)/i;return x(t.x,t.y,n.root.x,n.root.y,o,t),t.upper=o,t.lower=o+r,t}function h(n,s,r,t){return x(n.end.x,n.end.y,n.mid.x,n.mid.y,r,t),x(t.x,t.y,n.root.x,n.root.y,s,t),t.upper=s,t.lower=s+r,t}export{y as E,e as K,h as l,E as r,x as t};
+
